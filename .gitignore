@@ -1,6 +1,5 @@
 .DS_Store
 
-.grunt
 node_modules
 bower_components
 
@@ -11,6 +10,3 @@ build/
 *.css.map
 
 npm-debug.log
-
-Gruntfile.js
-package.json
