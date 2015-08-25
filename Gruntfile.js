@@ -35,6 +35,14 @@ module.exports = function(grunt) {
                     dest: 'build/img'
                 }]
             },
+            fonts: {
+                files: [{
+                    expand: true,
+                    cwd: 'src/fonts',
+                    src: ['**/*'],
+                    dest: 'build/fonts'
+                }]
+            },
             php: {
                 files: [{
                     expand: true,
@@ -65,7 +73,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    '../mandowp/wp-content/themes/mando/style.css': 'src/scss/style.scss'
+                    'build/style.css': 'src/scss/style.scss'
                 }
             }
         },
@@ -177,6 +185,14 @@ module.exports = function(grunt) {
             php: {
                 files: ['src/php/**/*.php'],
                 tasks: ['copy:php'],
+                options: {
+                    spawn: false,
+                    livereload: true
+                }
+            },
+            fonts: {
+                files: ['src/fonts/**/*'],
+                tasks: ['copy:fonts'],
                 options: {
                     spawn: false,
                     livereload: true

@@ -1,0 +1,380 @@
+.search {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 600px;
+
+    @media screen and (max-width: 684px) {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    @media screen and (max-width: 480px) {
+        width: 250px;
+        position: relative;
+        margin: 0 auto;
+        height: 40px;
+        max-width: 300px;
+    }
+
+    .searchinput {
+        width: 75%;
+        margin-right: 5%;
+        float: left;
+        border: none;
+        height: 40px;
+        font-size: 12px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline-color: $red;
+        color: #888888;
+        padding-left: 10px;
+        -webkit-transition: width 400ms ease-in-out;
+        -moz-transition: width 400ms ease-in-out;
+        -o-transition: width 400ms ease-in-out;
+        transition: width 400ms ease-in-out;
+
+        @media screen and (max-width: 684px) {
+            width: 65%;
+            margin-right: 5%;
+        }
+
+        @media screen and (max-width: 480px) {
+            height: 35px;
+        }
+    }
+
+    .searchsubmit {
+        width: 15%;
+        height: 90px;
+        outline: none;
+        border: 10px solid rgba(0, 0, 0, 0.58);
+        -webkit-border-radius: 999px;
+        -moz-border-radius: 999px;
+        border-radius: 999px;
+        color: #fff;
+        margin-top: -28px;
+        background: #572f38 url(img/search.png) no-repeat center center;
+        -moz-background-size: 19px 19px;
+        -o-background-size: 19px 19px;
+        background-size: 19px 19px;
+        -moz-background-clip: padding-box;
+        -o-background-clip: padding-box;
+        background-clip: padding-box;
+        -webkit-transition: all 400ms ease-in-out;
+        -moz-transition: all 400ms ease-in-out;
+        -o-transition: all 400ms ease-in-out;
+        transition: all 400ms ease-in-out;
+        cursor: pointer;
+        background-position: center center;
+
+        @media screen and (max-width: 684px) {
+            margin-top: -19px;
+            width: 20%;
+            height: 80px;
+        }
+
+        @media screen and (max-width: 480px) {
+            width: 21%;
+            height: 53px;
+            -moz-background-size: 15px 15px !important;
+            -o-background-size: 15px 15px !important;
+            background-size: 15px 15px !important;
+            border: 5px solid rgba(6, 10, 0, 0.66);
+            margin-top: -8px;
+        }
+
+        &:hover {
+            background: #47262D url(img/search.png) no-repeat center center;
+            /* -webkit-background-clip: padding-box; */
+            border: 10px solid rgba(87, 47, 56, 1);
+            -moz-background-size: 19px 19px;
+            -o-background-size: 19px 19px;
+            background-size: 19px 19px;
+            -webkit-animation: flowsearch 200ms ease-in-out;
+            -moz-animation: flowsearch 200ms ease-in-out;
+            -o-animation: flowsearch 200ms ease-in-out;
+            animation: flowsearch 200ms ease-in-out;
+        }
+
+        @-webkit-keyframes flowsearch {
+            0% {
+                background-position: center 70px;
+            }
+
+            100% {
+                background-position: center center;
+            }
+        }
+
+        @-moz-keyframes flowsearch {
+            0% {
+                background-position: center 70px;
+            }
+
+            100% {
+                background-position: center center;
+            }
+        }
+
+        @-o-keyframes flowsearch {
+            0% {
+                background-position: center 70px;
+            }
+
+            100% {
+                background-position: center center;
+            }
+        }
+
+        @keyframes flowsearch {
+            0% {
+                background-position: center 70px;
+            }
+
+            100% {
+                background-position: center center;
+            }
+        }
+    }
+}
+
+.products-frontpage {
+    width: 100%;
+    height: 35%;
+    position: relative;
+
+    .mostpopularsign {
+        position: absolute;
+        left: 0;
+        display: block;
+        right: 0;
+        top: -40px;
+        height: 40px;
+        width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 1;
+        text-align: center;
+        line-height: 40px;
+        font-size: 15px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        background: $red;
+        color: #fff;
+    }
+
+    .helper {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+
+    .product {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 25%;
+        float: left;
+        height: 100%;
+        border-right: 1px solid #e8e8e8;
+
+        @media screen and (max-width: 1125px) {
+            width: 50%;
+            border-top: 1px solid #e8e8e8;
+            height: 340px;
+        }
+
+        @media screen and (max-width: 630px) {
+            width: 100%;
+            margin: 0 auto;
+            float: none;
+            height: 340px;
+            border: none;
+            border-top: 1px solid #e8e8e8;
+        }
+
+        .table {
+            width: 100%;
+            height: 100%;
+            display: table;
+
+            .cell {
+                height: 100%;
+                width: 100%;
+                vertical-align: middle;
+                display: table-cell;
+            }
+        }
+
+        .imgwrap {
+            display: inline-block;
+            width: 20%;
+            margin-left: 7.5%;
+            margin-right: 7.5%;
+            position: relative;
+            vertical-align: middle;
+
+            img {
+                display: block;
+                vertical-align: middle;
+                height: 200px;
+                margin: 0 auto;
+                cursor: pointer;
+
+                @media screen and (max-width: 480px) {
+                    height: 240px;
+                }
+            }
+        }
+
+        .textwrap {
+            height: 100%;
+            width: 60%;
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+
+            h2.price {
+                font-size: 30px;
+                color: $red;
+                font-weight: 700;
+                float: left;
+                width: 100%;
+                position: relative;
+                margin-bottom: 15px;
+
+                @media screen and (max-width: 480px) {
+                    margin-bottom: 20px;
+                }
+            }
+
+            .addtobasket {
+                width: 95%;
+                margin-right: 5%;
+                position: relative;
+                height: 45px;
+                background: $red;
+                margin-bottom: 15px;
+                float: left;
+                color: #fff;
+                line-height: 45px;
+                cursor: pointer;
+                -webkit-transition: all 300ms ease-in-out;
+                -moz-transition: all 300ms ease-in-out;
+                -o-transition: all 300ms ease-in-out;
+                transition: all 300ms ease-in-out;
+
+                &:hover {
+                    background: #732537;
+                }
+
+                @media screen and (max-width: 480px) {
+                    width: 100%;
+                    margin-right: 0%;
+                }
+
+                .bagholder {
+                    background: #4e2a32;
+                    width: 30%;
+                    height: 100%;
+                    display: inline-block;
+                    vertical-align: middle;
+                    top: -2px;
+                    position: relative;
+
+                    img {
+                        display: block;
+                        vertical-align: middle;
+                        margin: 0 auto;
+                        position: relative;
+                        top: 25%;
+                    }
+                }
+
+                .addtotext {
+                    width: 70%;
+                    margin: 0 auto;
+                    text-align: center;
+                    display: inline-block;
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    margin-left: -2px;
+                    top: -2px;
+                    position: relative;
+                }
+            }
+
+            .tag {
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                position: relative;
+                display: block;
+                margin-bottom: 15px;
+                width: 45%;
+                margin-right: 5%;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-size: 12px;
+                height: 35px;
+                background: #FBFBFB;
+                color: #fff;
+                border: 1px solid #e8e8e8;
+                font-weight: 900;
+                line-height: 35px;
+                color: #572F38;
+                text-align: center;
+                float: left;
+                cursor: pointer;
+                -webkit-transition: all 300ms ease-in-out;
+                -moz-transition: all 300ms ease-in-out;
+                -o-transition: all 300ms ease-in-out;
+                transition: all 300ms ease-in-out;
+
+                &:hover {
+                    background: $red;
+                    color: #fff;
+                }
+
+                @media screen and (max-width: 1350px) {
+                    width: 45%;
+                    margin-right: 5%;
+                }
+
+                @media screen and (max-width: 480px) {
+                    width: 100%;
+                    margin-top: 0px;
+                    margin-bottom: 10px;
+                }
+            }
+
+            .putinbasket {
+                background: $red url("img/logo.png") center left no-repeat;
+            }
+
+            .text {
+                color: #888888;
+                line-height: 1.8;
+                max-width: 100%;
+                font-size: 12px;
+                height: 40px;
+                overflow: hidden;
+                float: left;
+
+                @media screen and (max-width: 1125px) {
+                    height: auto;
+                }
+
+                @media screen and (max-width: 480px) {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}

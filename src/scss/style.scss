@@ -1,1 +1,23 @@
 @import "cssreset";
+@import "general/colors";
+@import "general/general";
+@import "forside/forside";
+@import "general/nav";
+@import "category/category";
+@import "category/slider";
+
+html, body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+}
+
+.clearfix:after {
+    content: " ";
+    /* Older browser do not support empty content */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
