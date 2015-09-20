@@ -67,7 +67,11 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
+<<<<<<< HEAD
                     'build/style.css' : 'src/scss/style.scss'
+=======
+                    'build/style.css': 'src/scss/style.scss'
+>>>>>>> 03e36f704c72af653997ba630ae04e60fbe21dd3
                 }
             }
         },
