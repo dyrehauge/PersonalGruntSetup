@@ -1,3 +1,3 @@
-# Bachelor Projekt Mandø
+# Personal New Project with grunt
 
-Bachelor Projekt 2015.
+... Changelog empty.
