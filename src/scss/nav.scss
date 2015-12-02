@@ -1,0 +1,584 @@
+.searchit, .login {
+    cursor: pointer;
+    line-height: 100px;
+    height: 100px;
+    width: 25px;
+    display: block;
+
+    @media screen and (max-width: 1000px) {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.tilmeld {
+    cursor: pointer;
+}
+
+.searchit {
+    background: url("img/search.png") no-repeat center center;
+    background-size: 17px 17px;
+
+    &:after {
+        -webkit-transform: translateY(-10px);
+        -moz-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+
+    &:hover:after {
+        opacity: 1;
+        -webkit-transform: translateY(-30px);
+        -moz-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+
+    @media screen and (max-width: 1000px) {
+        background: url("img/searchblack.png") no-repeat center center;
+        background-size: 17px 17px;
+    }
+}
+
+.login {
+    background: url("img/profil.png") no-repeat center center;
+    background-size: 17px 17px;
+
+    &:after {
+        -webkit-transform: translateY(-10px);
+        -moz-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+
+    &:hover:after {
+        opacity: 1;
+        -webkit-transform: translateY(-30px);
+        -moz-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+
+    @media screen and (max-width: 1000px) {
+        background: url("img/profilblack.png") no-repeat center center;
+        background-size: 17px 17px;
+    }
+}
+
+.searcharea {
+    position: absolute;
+    top: -200px;
+    left: 0;
+    height: 200px;
+    background-color: #FF6262;
+    z-index: 99999;
+    width: 100%;
+    transition: top 400ms ease-in-out;
+    text-align: center;
+    overflow: hidden;
+
+    .closeme {
+        position: absolute;
+        top: 7px;
+        right: 7px;
+        width: 50px;
+        height: 50px;
+        transform: rotate(45deg);
+        cursor: pointer;
+
+        .line1, .line2 {
+            width: 1px;
+            height: 25px;
+            background: #fff;
+            position: absolute;
+            left: 24.5px;
+            top: 14px;
+        }
+
+        .line2 {
+            transform: rotate(90deg);
+        }
+    }
+
+    form {
+        margin: 0 auto;
+        display: inline-block;
+        width: 90%;
+        max-width: 750px;
+
+        input[type=search] {
+            height: 40px;
+            width: auto;
+            border: none;
+            background: #fff;
+            padding-left: 10px;
+            position: relative;
+            width: 65%;
+            top: 6px;
+            margin-right: 19px;
+
+            @media screen and (max-width: 440px) {
+                width: 65%;
+            }
+        }
+
+        input[type=submit] {
+            height: 60px;
+            width: auto;
+            cursor: pointer;
+            border: none;
+            font-size: 0;
+            background: #DC4C4C url("img/search.png") no-repeat center;
+            color: #fff;
+            border-radius: 999px;
+            width: 60px;
+            background-size: 17px 17px;
+        }
+    }
+}
+
+.bringsearch {
+    top: 0px;
+
+    @media screen and (max-width: 1000px) {
+        top: 105px;
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 4000;
+    display: none;
+    opacity: 0;
+    transition: all 400ms ease-in-out;
+}
+
+.fadeIn {
+    opacity: 1;
+}
+
+.moveup {
+    opacity: 1 !important;
+    top: 45% !important;
+
+    @media screen and (max-width: 500px) {
+        top: 60% !important;
+    }
+}
+
+.loginmodal {
+    position: fixed;
+    width: 300px;
+    height: 425px;
+    background-color: #FFF;
+    padding: 10px;
+    z-index: 200;
+    position: fixed;
+    left: 50%;
+    top: 60%;
+    z-index: 5000;
+    display: none;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: all 400ms ease-in-out;
+
+    .closemodal {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        width: 50px;
+        height: 50px;
+        transform: rotate(45deg);
+        cursor: pointer;
+
+        .line1, .line2 {
+            width: 1px;
+            height: 15px;
+            background: #9E9E9E;
+            position: absolute;
+            left: 25px;
+            top: 14px;
+        }
+
+        .line2 {
+            transform: rotate(90deg);
+        }
+    }
+
+    .logo {
+        width: 60%;
+        margin: 50px auto;
+    }
+
+    input[type="text"], input[type="password"] {
+        width: 80%;
+        margin: 0 auto;
+        display: block;
+        height: 40px;
+        padding-left: 11px;
+        font-size: 15px;
+        color: #000;
+        border: 1px solid #e8e8e8;
+        margin-bottom: 15px;
+    }
+
+    input[type="submit"] {
+        width: 84.5%;
+        margin: 0 auto;
+        display: block;
+        height: 45px;
+        padding-left: 11px;
+        font-size: 15px;
+        color: #fff;
+        border: 1px solid #e8e8e8;
+        margin-bottom: 15px;
+        padding: 0;
+        margin: 0 auto;
+        cursor: pointer;
+        background-color: #FF6868;
+    }
+}
+
+nav {
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+
+    .logo {
+        width: 160px;
+        position: absolute;
+        top: 30px;
+        left: 50px;
+    }
+
+    ul {
+        position: relative;
+        float: right;
+
+        li {
+            float: left;
+            list-style-type: none;
+            margin-right: 35px;
+
+            img {
+                max-width: 17px;
+            }
+
+            a {
+                line-height: 100px;
+                color: #fff;
+                font-weight: 700;
+                font-size: 14px;
+                position: relative;
+                text-transform: uppercase;
+
+                img {
+                    max-width: 17px;
+                }
+
+                &:after {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background: rgba(255, 255, 255, 1);
+                    content: '';
+                    opacity: 0;
+                    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+                    -moz-transition: opacity 0.3s, -moz-transform 0.3s;
+                    transition: opacity 0.3s, transform 0.3s;
+                    -webkit-transform: translateY(20px);
+                    -moz-transform: translateY(20px);
+                    transform: translateY(20px);
+                }
+
+                &:hover:after {
+                    opacity: 1;
+                    -webkit-transform: translateY(10px);
+                    -moz-transform: translateY(10px);
+                    transform: translateY(10px);
+                }
+            }
+        }
+    }
+}
+
+.pull_menu {
+    display: none;
+}
+
+.mobileheader {
+    display: none;
+}
+
+.logomobile {
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    li.smallmobile {
+        width: 50%;
+        height: 50px;
+        float: left;
+        position: relative;
+        display: inline-block;
+        margin: 0;
+        box-sizing: border-box;
+
+        &:nth-child(even) {
+            border-right: 1px solid #e8e8e8;
+        }
+    }
+
+    nav {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        float: left;
+        position: fixed;
+        background: #fff;
+        z-index: 3000;
+        top: 49px !important;
+        -webkit-transition: 400ms ease-in-out;
+        -ms-transition: 400ms ease-in-out;
+        -moz-transition: 400ms ease-in-out;
+        -o-transition: 400ms ease-in-out;
+        transition: 400ms ease-in-out;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        -ms-transform: translate3d(-100%, 0, 0);
+        -moz-transform: translate3d(-100%, 0, 0);
+        -o-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+
+        .logo {
+            display: none;
+        }
+
+        ul {
+            float: none;
+
+            li {
+                width: 100%;
+                margin-left: 0px;
+                float: left;
+                line-height: 70px !important;
+                text-align: center;
+                border-bottom: 1px solid #e8e8e8;
+                margin-left: 0;
+
+                a {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    color: #000;
+                    line-height: 50px;
+                }
+            }
+        }
+    }
+
+    .logomobile {
+        display: block;
+        width: 140px;
+        position: relative;
+        top: 15px;
+        left: 20px;
+
+        img {
+            height: 25px;
+        }
+    }
+
+    .mobileheader {
+        background: #fff;
+        height: 50px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        display: block;
+        z-index: 99999;
+        border-bottom: 1px solid #e8e8e8;
+    }
+
+    nav .main-menu {
+        float: none;
+        right: 0;
+
+        li {
+            margin-left: 0;
+        }
+    }
+
+    .pull_menu {
+        display: block;
+        float: right;
+        position: fixed;
+        -webkit-transition: 400ms ease-in-out;
+        -ms-transition: 400ms ease-in-out;
+        -moz-transition: 400ms ease-in-out;
+        -o-transition: 400ms ease-in-out;
+        transition: 400ms ease-in-out;
+        -webkit-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        width: 50px;
+        height: 50px;
+        top: 0;
+        right: 15px;
+        color: #fff;
+        z-index: 3000;
+        cursor: pointer;
+    }
+
+    .pull_menu .line-1, .pull_menu .line-2, .pull_menu .line-3 {
+        width: 60%;
+        height: 4px;
+        background: #414141;
+        margin: 0 auto;
+        margin-top: 6px;
+    }
+
+    .pull_menu .line-1 {
+        margin-top: 13px;
+    }
+
+    .pull_menu_in_out {
+        -webkit-transform: translate3d(0, 0, 0) !important;
+        -ms-transform: translate3d(0, 0, 0) !important;
+        -moz-transform: translate3d(0, 0, 0) !important;
+        -o-transform: translate3d(0, 0, 0) !important;
+        transform: translate3d(0, 0, 0) !important;
+    }
+
+    .pull_menu_icon {
+        -webkit-transform: translate3d(249px, 0, 0) !important;
+        -ms-transform: translate3d(249px, 0, 0) !important;
+        -moz-transform: translate3d(249px, 0, 0) !important;
+        -o-transform: translate3d(249px, 0, 0) !important;
+        transform: translate3d(249px, 0, 0) !important;
+    }
+
+    .push_wrap {
+        -webkit-transform: translate3d(250px, 0, 0) !important;
+        -ms-transform: translate3d(250px, 0, 0) !important;
+        -moz-transform: translate3d(250px, 0, 0) !important;
+        -o-transform: translate3d(250px, 0, 0) !important;
+        transform: translate3d(250px, 0, 0) !important;
+    }
+
+    .line-1, .line-2, .line-3 {
+        position: relative;
+        width: 30px;
+        top: 0;
+        opacity: 1;
+        height: 3px;
+        background: #fff;
+        margin-top: 5px;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: -webkit-transform 300ms ease, top 300ms 200ms ease, opacity 300ms 300ms;
+        -moz-transition: -moz-transform 300ms ease, top 300ms 200ms ease, opacity 300ms 300ms;
+        -o-transition: -o-transform 300ms ease, top 300ms 200ms ease, opacity 300ms 300ms;
+        transition: transform 300ms ease, top 300ms 200ms ease, opacity 300ms 200ms;
+    }
+
+    .line-1-animate {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        position: relative;
+        top: 10px;
+        background: #000 !important;
+        -webkit-transition: -webkit-transform 300ms 300ms ease, top 300ms ease;
+        -moz-transition: -moz-transform 300ms 300ms ease, top 300ms ease;
+        -o-transition: -o-transform 300ms 300ms ease, top 300ms ease;
+        transition: transform 300ms 300ms ease, top 300ms ease;
+    }
+
+    .line-2-remove {
+        opacity: 0;
+        -webkit-transition: opacity 300 300ms ease;
+        -moz-transition: opacity 300 300ms ease;
+        -o-transition: opacity 300 300ms ease;
+        transition: opacity 300 300ms ease;
+    }
+
+    .line-3-animate {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        top: -10px;
+        background: #000 !important;
+        -webkit-transition: -webkit-transform 300ms 300ms ease, top 300ms ease;
+        -moz-transition: -moz-transform 300ms 300ms ease, top 300ms ease;
+        -o-transition: -o-transform 300ms 300ms ease, top 300ms ease;
+        transition: transform 300ms 300ms ease, top 300ms ease;
+    }
+}
+
+#wpcf7-f48-o1 form {
+    display: inline-block;
+}
+
+form {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 750px;
+
+    @media screen and (max-width: 1000px) {
+        width: 100%;
+    }
+
+    label {
+        position: relative;
+        margin: 0 auto;
+        display: block;
+        left: 17px;
+        top: 11px;
+    }
+
+    input.search-field {
+        height: 40px;
+        width: auto;
+        border: none;
+        background: #fff;
+        padding-left: 10px;
+        margin-top: 20px;
+        position: relative;
+        width: 40%;
+        top: 6px;
+        margin-right: 19px;
+
+        @media screen and (max-width: 440px) {
+            width: 65%;
+        }
+    }
+
+    input.search-submit {
+        height: 60px;
+        width: auto;
+        cursor: pointer;
+        border: none;
+        font-size: 0;
+        background: #DC4C4C url("img/search.png") no-repeat center;
+        color: #fff;
+        border-radius: 999px;
+        width: 60px;
+        background-size: 17px 17px;
+    }
+}

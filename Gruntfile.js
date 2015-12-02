@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+    require('jit-grunt')(grunt);
     grunt.registerTask('default', ['build']);
     grunt.registerTask('dev', ['build', 'concurrent']);
 
@@ -22,7 +23,7 @@ module.exports = function(grunt) {
 
         clean: {
             build: {
-                src: ['build']
+                src: ['techwp/wp-content/themes/techdk']
             }
         },
 
@@ -32,7 +33,7 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: 'src/img/',
                     src: ['**/*'],
-                    dest: 'build/img'
+                    dest: 'techwp/wp-content/themes/techdk/img'
                 }]
             },
             fonts: {
@@ -40,7 +41,7 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: 'src/fonts',
                     src: ['**/*'],
-                    dest: 'build/fonts'
+                    dest: 'techwp/wp-content/themes/techdk/fonts'
                 }]
             },
             php: {
@@ -48,15 +49,15 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: 'src/php',
                     src: ['**/*.php'],
-                    dest: 'build'
+                    dest: 'techwp/wp-content/themes/techdk'
                 }]
             },
-              pem: {
+            pem: {
                 files: [{
                     expand: true,
                     cwd: 'src/php',
                     src: ['**/*.pem'],
-                    dest: 'build'
+                    dest: 'techwp/wp-content/themes/techdk'
                 }]
             },
         },
@@ -67,11 +68,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-<<<<<<< HEAD
-                    'build/style.css' : 'src/scss/style.scss'
-=======
-                    'build/style.css': 'src/scss/style.scss'
->>>>>>> 03e36f704c72af653997ba630ae04e60fbe21dd3
+                    'techwp/wp-content/themes/techdk/style.css' : 'src/scss/style.scss'
                 }
             }
         },
@@ -123,7 +120,7 @@ module.exports = function(grunt) {
                     browser: true
                 },
                 src: [
-                    'src/js/**/*.js'
+                'src/js/**/*.js'
                 ]
             }
         },
@@ -133,9 +130,9 @@ module.exports = function(grunt) {
                     separator: ';\n'
                 },
                 src: [
-                    'src/js/**/*.js'
+                'src/js/**/*.js'
                 ],
-                dest: 'build/js/scripts.js'
+                dest: 'techwp/wp-content/themes/techdk/js/scripts.js'
             }
         },
         uglify: {
@@ -150,7 +147,7 @@ module.exports = function(grunt) {
             },
             my_target: {
                 files: {
-                    'build/js/scripts.js': ['src/js/js.js']
+                    'techwp/wp-content/themes/techdk/js/scripts.js': ['src/js/js.js']
                 }
             }
         },
@@ -207,15 +204,4 @@ module.exports = function(grunt) {
         }
     });
 
-    // grunt.loadNpmTasks('grunt-shell');
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-copy');
-
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-
-    grunt.loadNpmTasks('grunt-concurrent');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-sass');
 };

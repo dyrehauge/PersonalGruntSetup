@@ -1,0 +1,42 @@
+
+		<div class="infobar">
+			<h4>Aktuelt i Odense</h4>
+		</div>
+
+		<?php
+		$arrayName = array('red','blue','yellow');
+		?>
+
+		<div class="thegrid clearfix">
+			<?php
+			$args = array( 'posts_per_page' => 3, 'offset'=> 0, 'category' => 1 );
+			$myposts = get_posts( $args );
+			foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+			<a href="<?php the_permalink(); ?>">
+				<div class="grid-1-3 <?php echo $arrayName[0]; ?>">
+					<div class="imgwrap coverimage">
+						<?php 
+						if ( has_post_thumbnail() ) {
+							the_post_thumbnail();
+						} 
+						?>
+					</div>
+					<div class="textwrap">
+						<div class="table">
+							<div class="cell">
+								<span class="date">04/08/2015</span>
+								<span class="time">10:32</span>
+								<h4><?php the_title(); ?></h4>
+								<img class="play" src="<?php bloginfo('template_directory'); ?>/img/play.png" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</a>
+			<?php array_shift($arrayName); ?>
+			<?php endforeach; 
+			wp_reset_postdata();?>
+		</div>
+	<?php endwhile; else : ?>
+	<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+<?php endif; ?>
